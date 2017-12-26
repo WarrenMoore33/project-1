@@ -54,3 +54,10 @@ function printQuote() {
     //Calls function to change button and body background
     randomColor();
 }
+
+var myVar;
+
+function automaticRandomizer() {
+    myVar = setInterval(printQuote, 5000);
+}
+automaticRandomizer();
