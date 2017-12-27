@@ -2,10 +2,10 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-//Creating the QUOTES variable as an array of objects
+//Creating the QUOTES letiable as an array of objects
 //Each object holds a quote, the source, an optional citation, and an optional year
-var quotes = [
-    {quote: "HANDICAP to mr me, never told a PARALYZE still here and the WHEEL CHAIR for DISABILITY", source: "Handlez Mcgee", citation:"The Arena Mixtape", year: 2013, tags:"Music"},
+let quotes = [
+    {quote: "HANDICAP to mr me, never told a PARALYZE still here and they WHEEL CHAIR for DISABILITY", source: "Handlez Mcgee", citation:"The Arena Mixtape", year: 2013, tags:"Music"},
     {quote: "Safe sex is great sex, you better wear a latex, 'cause you don't want that late text that...I think I'm late text...so wrap it up", source: "Lil Wayne", citation:"Lollipop Remix", year: 2008, tags:"Music"},
     {quote: "Feel it way down in my CELL all I need is one MICRO-PHONE", source: "Handlez Mcgee", citation:"aMC Mixtape", year: 2014, tags:"Music"},
     {quote: "Revenge is a dish best served cold...", source: "Unknown"},
@@ -18,20 +18,20 @@ var quotes = [
 
 //Function to pull a quote form the array QUOTES randomly
 function getRandomQuote() {
-    var randomNum = Math.floor((Math.random() * quotes.length));
-    var choice = quotes[randomNum];
+    let randomNum = Math.floor((Math.random() * quotes.length));
+    let choice = quotes[randomNum];
     
     return choice;  
 }
 
 //Function to change the background to a random color.
 function randomColor() {
-    var red = Math.floor(Math.random() * 256);
-    var green = Math.floor(Math.random() * 256);
-    var blue = Math.floor(Math.random() * 256);
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
 
-    var rgbColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';    
-    var rgbColorBtn = 'rgb(' + (red - 50) + ', ' + (green- 50) + ', ' + (blue + 30) + ')';
+    let rgbColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';    
+    let rgbColorBtn = 'rgb(' + (red - 50) + ', ' + (green- 50) + ', ' + (blue + 30) + ')';
  
     //background of the body
     document.body.style.backgroundColor = rgbColor;
@@ -42,8 +42,8 @@ function randomColor() {
 
 //Function to print the random quote to the page
 function printQuote() {
-    var newQuote = getRandomQuote();
-    var message = '<p class="quote">' + newQuote.quote + '</p><p class="source">' + newQuote.source;
+    let newQuote = getRandomQuote();
+    let message = '<p class="quote">' + newQuote.quote + '</p><p class="source">' + newQuote.source;
     
     if(newQuote.citation) {
         message += '<span class="citation">' + newQuote.citation + '</span>';
@@ -64,9 +64,9 @@ function printQuote() {
 }
 
 //Function to automatically generate quotes and backgrounds if the user does not hit the button
-var myVar;
+let mylet;
 
 function automaticRandomizer() {
-    myVar = setInterval(printQuote, 10000);
+    mylet = setInterval(printQuote, 10000);
 }
 automaticRandomizer();
